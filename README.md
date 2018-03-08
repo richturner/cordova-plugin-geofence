@@ -2,6 +2,18 @@
 
 [![version](https://badge.fury.io/js/cordova-plugin-geofence.png)](https://badge.fury.io/js/cordova-plugin-geofence)
 
+It also allows configuration of the version of play-services-location to use which is important when using this plugin in conjuction with other plugins (wildcard `+` dependencies don't work), to configure the play services version:
+
+```
+cordova plugin add https://github.com/richturner/cordova-plugin-geofence --variable PS_VERSION=11.8.0
+```
+This then adds the following to your config.xml:
+```xml
+<plugin name="cordova-plugin-geofence" spec="https://github.com/richturner/cordova-plugin-geofence">
+    <variable name="PS_VERSION" value="11.8.0" />
+</plugin>
+```
+
 Plugin to monitor circular geofences using mobile devices. The purpose is to notify user if crossing the boundary of the monitored geofence.
 
 *Geofences persist after device reboot. You do not have to open your app first to monitor added geofences*

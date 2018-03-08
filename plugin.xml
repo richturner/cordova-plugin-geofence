@@ -19,8 +19,8 @@
         <clobbers target="geofence" />
     </js-module>
 
-    <dependency id="cordova-plugin-add-swift-support" version="1.6.0" />
-    <dependency id="cordova-plugin-compat" version="^1.0.0" />
+    <dependency id="cordova-plugin-add-swift-support" version="1.7.1" />
+    <dependency id="cordova-plugin-compat" version="1.2.0" />
     <dependency id="es6-promise-plugin" />
 
     <!-- android -->
@@ -46,7 +46,8 @@
         <source-file src="src/android/ReceiveTransitionsIntentService.java" target-dir="src/com/cowbell/cordova/geofence" />
         <source-file src="src/android/RemoveGeofenceCommand.java" target-dir="src/com/cowbell/cordova/geofence" />
 
-        <framework src="com.google.android.gms:play-services-location:+" />
+        <framework src="com.google.android.gms:play-services-location:$PS_VERSION" />
+        <preference name="PS_VERSION" default="11.6.2"/>
         <lib-file src="src/android/libs/gson-2.3.jar" />
 
         <config-file target="config.xml" parent="/*">
