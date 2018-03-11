@@ -11,6 +11,9 @@ public class GeoNotification {
     @Expose public int transitionType;
 
     @Expose public Notification notification;
+    
+    // Allows storage of arbitrary data that doesn't fit in standard properties
+    @Expose public Object data;
 
     public GeoNotification() {
     }
