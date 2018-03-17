@@ -12,16 +12,20 @@ public class GoogleServiceCommandExecutor implements IGoogleServiceCommandListen
     }
 
     public void QueueToExecute(AbstractGoogleServiceCommand command) {
+        if (command == null) {
+            return;
+        }
         commandsToExecute.add(command);
         if (!isExecuting) ExecuteNext();
     }
 
     private void ExecuteNext() {
-        if (commandsToExecute.isEmpty()) return;
-        isExecuting = true;
         AbstractGoogleServiceCommand command = commandsToExecute.poll();
-        command.addListener(this);
-        command.Execute();
+        if (command != null) {
+            isExecuting = true;
+            command.addListener(this);
+            command.Execute();
+        }
     }
 
     @Override
