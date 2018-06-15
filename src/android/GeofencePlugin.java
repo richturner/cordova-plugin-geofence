@@ -26,6 +26,7 @@ public class GeofencePlugin extends CordovaPlugin {
     public static final String ERROR_PERMISSION_DENIED = "PERMISSION_DENIED";
     public static final String ERROR_GEOFENCE_NOT_AVAILABLE = "GEOFENCE_NOT_AVAILABLE";
     public static final String ERROR_GEOFENCE_LIMIT_EXCEEDED = "GEOFENCE_LIMIT_EXCEEDED";
+    public static final String ERROR_GEOFENCE_INTENT_LIMIT_EXCEEDED = "GEOFENCE_INTENT_LIMIT_EXCEEDED";
 
     private GeoNotificationManager geoNotificationManager;
     private Context context;
